@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'Second_page.dart';
+import 'start_page.dart';
 import 'Registration_Form.dart';
 
 class LoginPage extends StatefulWidget{
@@ -43,7 +43,7 @@ class _LoginPageState extends State<LoginPage>{
         onPressed: () {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => SecondPage())
+            MaterialPageRoute(builder: (context) => StartPage())
           );
         },
         child: Text("Login",

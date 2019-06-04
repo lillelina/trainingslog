@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'Second_page.dart';
+import 'start_page.dart';
 import 'login_page.dart';
+import 'set_pw.dart';
 
 class RegistrationForm extends StatefulWidget{
   RegistrationForm({Key key, this.title}) : super(key: key);
@@ -52,7 +53,7 @@ class _RegistrationFormState extends State<RegistrationForm> {
         onPressed: () {
           Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => SecondPage())
+              MaterialPageRoute(builder: (context) => PasswordForm())
           );
         },
         child: Text("Submit",

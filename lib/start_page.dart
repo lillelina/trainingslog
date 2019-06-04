@@ -1,7 +1,8 @@
 import'package:flutter/material.dart';
 import 'login_page.dart';
 
-class SecondPage extends StatelessWidget{
+
+class StartPage extends StatelessWidget{
   TextStyle style = TextStyle(fontFamily: 'Montserrat', fontSize: 20.0);
   @override
   Widget build(BuildContext context) {
@@ -14,7 +15,7 @@ class SecondPage extends StatelessWidget{
         child: RaisedButton(
             child: Text('Go Back to Login'),
             onPressed: (){
-              Navigator.pop(
+              Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => LoginPage())
               );
