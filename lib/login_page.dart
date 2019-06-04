@@ -51,6 +51,26 @@ class _LoginPageState extends State<LoginPage>{
       ),
     );
 
+    final registrationButton = Material(
+      elevation: 5.0,
+      borderRadius: BorderRadius.circular(30.0),
+      color: Color(0xff01A0C7),
+      child: MaterialButton(
+        minWidth: MediaQuery.of(context).size.width,
+        padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
+        onPressed: () {
+          Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => SecondPage())
+          );
+        },
+        child: Text("Register",
+            textAlign: TextAlign.center,
+            style: style.copyWith(
+                color: Colors.white, fontWeight: FontWeight.bold)),
+      ),
+    );
+
     return Scaffold(
       body: Center(
         child: Container(
@@ -76,6 +96,10 @@ class _LoginPageState extends State<LoginPage>{
                   height: 35,
                 ),
                 loginButton,
+                SizedBox(
+                  height: 15.0,
+                ),
+                registrationButton,
                 SizedBox(
                   height: 15.0,
                 ),
