@@ -1,59 +1,48 @@
 import 'package:flutter/material.dart';
 import 'Second_page.dart';
-import 'Registration_Form.dart';
+import 'login_page.dart';
 
-class LoginPage extends StatefulWidget{
-LoginPage({Key key, this.title}) : super(key: key);
-final String title;
-@override
-_LoginPageState createState() => _LoginPageState();
+class RegistrationForm extends StatefulWidget{
+  RegistrationForm({Key key, this.title}) : super(key: key);
+  final String title;
+  @override
+  _RegistrationFormState createState() => _RegistrationFormState();
 }
 
-class _LoginPageState extends State<LoginPage>{
-  TextStyle style = TextStyle(fontFamily: 'Montserrat', fontSize: 20.0);
 
+class _RegistrationFormState extends State<RegistrationForm> {
+  TextStyle style = TextStyle(fontFamily: 'Montserrat', fontSize: 20.0);
   @override
   Widget build(BuildContext context) {
-    final emailField = TextField(
+    final firstNameField = TextField(
         obscureText: false,
         style: style,
         decoration: InputDecoration(
             contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-            hintText: "Email",
+            hintText: "First Name",
             border:
             OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)))
     );
 
-    final passwordField = TextField(
+    final lastNameField = TextField(
       obscureText: true,
       decoration: InputDecoration(
           contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-          hintText: "Password",
+          hintText: "Last Name",
           border:
           OutlineInputBorder(borderRadius: BorderRadius.circular(32.0))),
     );
 
-    final loginButton = Material(
-      elevation: 5.0,
-      borderRadius: BorderRadius.circular(30.0),
-      color: Color(0xff01A0C7),
-      child: MaterialButton(
-        minWidth: MediaQuery.of(context).size.width,
-        padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-        onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => SecondPage())
-          );
-        },
-        child: Text("Login",
-            textAlign: TextAlign.center,
-            style: style.copyWith(
-                color: Colors.white, fontWeight: FontWeight.bold)),
-      ),
+    final emailField = TextField(
+      obscureText: true,
+      decoration: InputDecoration(
+          contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
+          hintText: "E-Mail",
+          border:
+          OutlineInputBorder(borderRadius: BorderRadius.circular(32.0))),
     );
 
-    final registrationButton = Material(
+    final submitButton = Material(
       elevation: 5.0,
       borderRadius: BorderRadius.circular(30.0),
       color: Color(0xff01A0C7),
@@ -63,15 +52,16 @@ class _LoginPageState extends State<LoginPage>{
         onPressed: () {
           Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => RegistrationForm())
+              MaterialPageRoute(builder: (context) => SecondPage())
           );
         },
-        child: Text("Register",
+        child: Text("Submit",
             textAlign: TextAlign.center,
             style: style.copyWith(
                 color: Colors.white, fontWeight: FontWeight.bold)),
       ),
     );
+    
 
     return Scaffold(
       body: Center(
@@ -91,17 +81,15 @@ class _LoginPageState extends State<LoginPage>{
                   ),
                 ),
                 SizedBox(height: 45.0),
-                emailField,
+                firstNameField,
                 SizedBox(height: 25.0),
-                passwordField,
+                lastNameField,
+                SizedBox(height: 45.0),
+                emailField,
                 SizedBox(
                   height: 35,
                 ),
-                loginButton,
-                SizedBox(
-                  height: 15.0,
-                ),
-                registrationButton,
+                submitButton,
                 SizedBox(
                   height: 15.0,
                 ),
