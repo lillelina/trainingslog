@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'Second_page.dart';
 class LoginPage extends StatefulWidget{
 LoginPage({Key key, this.title}) : super(key: key);
 final String title;
@@ -38,7 +38,12 @@ class _LoginPageState extends State<LoginPage>{
       child: MaterialButton(
         minWidth: MediaQuery.of(context).size.width,
         padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => SecondPage())
+          );
+        },
         child: Text("Login",
             textAlign: TextAlign.center,
             style: style.copyWith(
